@@ -1,0 +1,32 @@
+<div class="alert alert-warning">
+    <a routerLink= "/listaProductos">Productos</a>
+</div>
+
+<div class="card">
+        <div class="card-body">
+                <label>Nombre</label>
+                <input type="text" class="form-control" required [(ngModel)]="producto.nombre"/>
+                <br/>
+                <label>Descripcion</label>
+                <input type="text" class="form-control" required [(ngModel)]="producto.descripcion"/>  
+                <br/>
+                <div class="form-group">
+                        <label for="categoria">Categoría</label>
+                        <select class="form-control" name="categoria" required [(ngModel)]="producto.categoria">
+                           <option value="Adultos">Adultos</option>
+                           <option value="Ninos">Ninos</option>
+                           <option value="Mamas">Mamas</option>
+                           <option value="Ancianos">Ancianos</option>
+                        </select>
+                </div>
+                <br/>
+                <label>Precio</label>
+                <input type="numeric" class="form-control" required [(ngModel)]="producto.precio"/>
+                <br/>
+                <label>Url-imagen</label>
+                <input type="text" class="form-control" required [(ngModel)]="producto.image"/>
+                <br/>
+                <a class="btn btn-primary" (click)="guardarProducto()">Enviar</a>
+                <a class="btn btn-secondary" routerLink="/listaProductos">Cancelar</a>
+            </div>
+</div>

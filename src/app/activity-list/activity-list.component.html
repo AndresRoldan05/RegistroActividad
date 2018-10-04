@@ -1,0 +1,29 @@
+<div class="row row-runs">
+  <h2 class="heading">Domicilios</h2>
+  <hr />
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Destinatario</th>
+        <th>Domicilio</th>
+        <th>Distancia (m)</th>
+        <!-- <th>Estado</th> -->
+        <th>Selección</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let domicilio of domicilios">
+        <td>
+          <a [routerLink] ="['/lugares', domicilio.id]">
+            Ver ruta de {{ domicilio.destinatario }}
+          </a>
+        </td>
+        <td>Domicilio {{ domicilio.id }}</td>
+        <td>{{ domicilio.distance}}</td>
+        <!-- <td>{{ domicilio.terminado?"Entregado":"Sin enviar"}}</td> -->
+        <td><input type="checkbox" name="isActive" [disabled]="domicilio.terminado" [(ngModel)]="domicilio.estado"></td>
+      </tr>
+    </tbody>
+  </table>
+  <a class="btn btn-primary" (click)="entregar()">Iniciar Entrega</a>
+</div>

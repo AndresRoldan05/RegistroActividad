@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-body">
+        <h6 class="text-center">LISTA DE PRODUCTOS</h6>
+        <table class="table table-sm table-hover">
+            <body>
+                <div class="mb-3">
+                        <input type="text" class="form-control" id="buscar" placeholder="Adultos" [(ngModel)]="consulta"/>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block"  (click)="buscar()">Consultar</button>
+                <tr>
+                    <th>PRODUCTO</th><th>CATEGORÍA</th><th>DESCRIPCIÓN</th><th>PRECIO</th><th>IMAGEN</th>
+                </tr>
+                <tr *ngFor="let productos of productList">
+                    <td>{{productos.nombre}}</td>
+                    <td>{{productos.categoria}}</td>
+                    <td>{{productos.descripcion}}</td>
+                    <td>{{productos.precio}}</td>
+                    <td>
+                        <img src="{{productos.image}}" width="300" height="150">
+                        <label>Cantidad</label>
+                        <input type="number" name="cantidad" style="width: 4em;" [(ngModel)]="productos.volumen">
+                    </td>
+                </tr>
+                <br/>
+            </body>
+        </table>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="comprar()">Comprar</button>
+    </div>
+</div>
